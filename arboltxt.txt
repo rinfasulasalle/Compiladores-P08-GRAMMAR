@@ -1,0 +1,36 @@
+--> TOKENS
+
+ID = "[a-zA-Z]+ ([a-zA-Z0-9]*)"
+ASIGNACION ::= "="
+ENTERO ::= "[0-9]"
+BOOL ::= "verdadero | falso"
+DECIMAL::= "\d+.\d"
+CADENA ::= "\."
+PLUS ::= "+"
+MINUS ::= "+"
+MULTI ::= "+"
+DIVIDE::= "\"
+
+TIPO ::= ENTERO | BOOL | DECIMAL | CADENA 
+VAR::= TEMPORAL | CONSTANTE | VARIABLE
+DECLARACION = VAR ID ASIGNACION EXPRESION
+| ID ASIGNACION EXPRESION
+OPERACIONES :: TIPO (PLUS | MINUS | MULTI | DIVIDE) EXPRESION | ε 
+
+PROGRAMA::= DECLARACION | EXPRESION
+
+"constante var1 = 10 + 10"
+
+PROGRAMA
+DECLARACION
+VAR ID ASIGNACION EXPRESION
+constante ID ASIGNACION EXPRESION
+constante var1 ASIGNACION EXPRESION
+constante var1 = EXPRESION
+constante var1 = OPERACIONES
+constante var1 = TIPO PLUS TIPO
+constante var1 = ENTERO PLUS TIPO
+constante var1 = ENTERO PLUS ENTERO
+constante var1 = 10 PLUS ENTERO
+constante var1 = 10 + ENTERO
+constante var1 = 10 + 10
